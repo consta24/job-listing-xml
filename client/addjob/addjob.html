@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Job</title>
+    <link rel="stylesheet" href="addjob.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Add Job Listing</h1>
+      <form id="add-job-form">
+        <label for="title-input">Title:</label>
+        <input type="text" id="title-input" name="title" required /><br />
+
+        <label for="description-input">Description:</label>
+        <textarea id="description-input" name="description" required></textarea
+        ><br />
+
+        <label for="skills-input">Skills:</label>
+        <input type="hidden" id="skills-input-hidden" name="skills" />
+        <div id="skills-container">
+          <ul id="skills-list"></ul>
+          <div id="skills-input-group">
+            <input type="text" id="skills-input" name="skills" />
+            <button id="add-skill-btn">Add Skill</button>
+          </div>
+        </div>
+
+        <label for="education-input">Education:</label>
+        <input type="hidden" id="education-input-hidden" name="educations" />
+        <div id="education-container">
+          <ul id="education-list"></ul>
+          <div id="education-input-group">
+            <select multiple id="education-input" name="educations">
+              <option value="Computer Science">Computer Science</option>
+              <option value="Web Development">Web Development</option>
+              <option value="Information Technology">
+                Information Technology
+              </option>
+              <option value="Data Science">Data Science</option>
+              <option value="Mathematics">Mathematics</option>
+              <option value="Graphic Design">Graphic Design</option>
+              <option value="Visual Arts">Visual Arts</option>
+              <option value="Illustration">Illustration</option>
+              <option value="Marketing">Marketing</option>
+              <option value="Business Administration">
+                Business Administration
+              </option>
+              <option value="Communications">Communications</option>
+              <option value="Project Management">Project Management</option>
+              <option value="Business Administration">
+                Business Administration
+              </option>
+              <option value="Network Engineering">Network Engineering</option>
+              <option value="Technical Writing">Technical Writing</option>
+            </select>
+            <button id="add-education-btn">Add Education</button>
+          </div>
+        </div>
+
+        <label for="experience-input">Experience:</label>
+        <input
+          type="number"
+          id="experience-input"
+          name="experience"
+          required
+        /><br />
+
+        <label for="companies-input">Companies:</label>
+        <input type="hidden" id="companies-input-hidden" name="companies" />
+        <div id="companies-container">
+          <ul id="companies-list"></ul>
+          <div id="companies-input-group">
+            <input type="text" id="companies-input" name="companies" />
+            <button id="add-company-btn">Add Company</button>
+          </div>
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+      <br />
+      <div id="response"></div>
+      <div class="extra-buttons-container">
+        <a href="/"><button class="extra-buttons">Home Page</button></a>
+        <a href="/jobs"><button class="extra-buttons">Job Listings</button></a>
+      </div>
+
+      <script src="js/submit.js"></script>
+      <script src="js/education.js"></script>
+      <script src="js/skills.js"></script>
+      <script src="js/companies.js"></script>
+    </div>
+  </body>
+</html>

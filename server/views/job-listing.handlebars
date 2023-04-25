@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="/job-listing.css" />
+  </head>
+  <body>
+    <h1 class="title">Job Listings</h1>
+
+    <div class="job-btn-container">
+      <a href="/"><button class="add-job-btn">Home Page</button></a>
+      <a href="/addjob"><button class="add-job-btn">Add Job</button></a>
+    </div>
+
+    <form action="/jobs" method="GET">
+    <div class="form-fields">
+        <input type="text" name="title" placeholder="Title..." />
+        <input type="text" name="company" placeholder="Company..."" />
+          <select name="experienceComparison">
+          <option value="<">Less than</option>
+          <option value="=">Equal to</option>
+          <option value=">">More than</option>
+        </select>
+        <input
+          type="number"
+          name="experience"
+          min="0"
+          placeholder="Experience years"
+          id="exp-years"
+        />
+        <select name="education">
+          <option value="">Education</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Data Science">Data Science</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Graphic Design">Graphic Design</option>
+          <option value="Visual Arts">Visual Arts</option>
+          <option value="Illustration">Illustration</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Business Administration">Business Administration</option>
+          <option value="Communications">Communications</option>
+          <option value="Project Management">Project Management</option>
+          <option value="Business Administration">Business Administration</option>
+          <option value="Network Engineering">Network Engineering</option>
+          <option value="Technical Writing">Technical Writing</option>
+        </select>
+      </div>
+      <div class="submit-btn-container">
+        <button type="submit">Search Jobs</button>
+      </div>
+    </form>
+
+    <ul>
+      {{#each jobs}}
+      <li
+        class="job-item"
+        data-experience="{{#if (lte experience 2)}}low{{else}}high{{/if}}"
+      >
+        <strong class="job-title">{{title}}</strong>
+        <div class="job-description">Description: {{description}}</div>
+        <div class="job-experience">Experience: {{experience}} year(s)</div>
+        <div class="job-lists">
+          <ul>
+            <li>
+              <span class="job-section-title">Skills</span>
+              <ul>
+                {{#each skills}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <span class="job-section-title">Education</span>
+              <ul>
+                {{#each education}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <span class="job-section-title">Companies</span>
+              <ul>
+                {{#each companies}}
+                <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>

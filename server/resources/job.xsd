@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="job">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="description" type="xs:string"/>
+        <xs:element name="skills">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="skill" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="education">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="field" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="experience" type="xs:integer"/>
+        <xs:element name="companies">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="company" type="xs:string" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

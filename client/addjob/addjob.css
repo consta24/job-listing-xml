@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
+}
+
+#add-job-form {
+  display: grid;
+  gap: 15px;
+}
+
+label {
+  font-size: 18px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 2px solid #dddddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4ca3dd;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+button,
+input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #4ca3dd;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #3b89b0;
+}
+
+button:active,
+input[type="submit"]:active {
+  background-color: #307198;
+}
+
+#skills-list,
+#education-list,
+#companies-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-bottom: 10px;
+  background-color: #4ca3dd;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+}
+
+#skills-list li,
+#education-list li,
+#companies-list li {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+#skills-input-group,
+#education-input-group,
+#companies-input-group {
+  display: flex;
+  gap: 10px;
+  border-radius: 4px;
+}
+
+#skills-input,
+#companies-input {
+  flex-grow: 1;
+}
+
+select[multiple] {
+  text-align: center;
+  flex-grow: 3;
+  height: 150px;
+}
+
+.extra-buttons {
+  margin-top: 50px;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.extra-buttons:a:not(last-child) {
+  margin-left: 0;
+}
+
+.extra-buttons-container {
+  display: flex;
+  justify-content: center;
+}
